@@ -1,0 +1,16 @@
+services:
+    product.product_parameter_factory:
+        class: Api\ProductBundle\Services\ProductParameterFactory
+    
+    product.product_created_dispatcher:
+        class: Api\ProductBundle\Services\ProductCreatedDispatcher
+        arguments:
+            - '@debug.event_dispatcher'
+
+    product.product_created_listener:
+        class: Api\ProductBundle\Listeners\ProductCreatedListener
+        public: true
+        arguments:
+            - '@monolog.logger.request'
+
+

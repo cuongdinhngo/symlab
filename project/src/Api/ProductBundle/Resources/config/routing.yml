@@ -1,0 +1,14 @@
+product_index:
+    path:     /
+    defaults: { _controller: ProductBundle:Product:index }
+    methods: GET|HEAD
+
+product_show:
+    path:     /show
+    defaults: { _controller: ProductBundle:Product:show }
+    methods: GET|HEAD
+
+product_store:
+    path:     /
+    defaults: { _controller: ProductBundle:Product:store }
+    methods: POST
